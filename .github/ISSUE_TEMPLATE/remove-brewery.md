@@ -8,15 +8,24 @@ assignees: ''
 
 <!--
 📝 HOW TO FILL THIS OUT:
-1. Make sure the brewery is PERMANENTLY closed (not just temporarily)
-2. Delete all the gray text and examples
-3. Type your information on the same line after each field
-4. Provide proof that it's closed (news link, photo, etc.)
+
+⚠️ FIRST: Click the "Preview" tab above to see what this looks like!
+         Gray comments disappear in preview - only your answers show.
 
 IMPORTANT: Only report if you're sure it's PERMANENTLY closed!
 - ✅ Building is empty or has new business
 - ✅ Google Maps says "Permanently closed"
 - ❌ Website is just down (might be temporary)
+
+THEN:
+1. Make sure the brewery is PERMANENTLY closed (not just temporarily)
+2. Click back to "Write" tab
+3. Delete all the gray text and examples
+4. Type your information on the same line after each field
+5. Provide proof that it's closed (news link, what you saw, etc.)
+6. Click "Preview" to check before submitting
+
+💡 TIP: Preview shows exactly what Claude and the instructor will see!
 -->
 
 ## Brewery Information

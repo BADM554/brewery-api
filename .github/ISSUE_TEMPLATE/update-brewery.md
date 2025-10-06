@@ -8,15 +8,23 @@ assignees: ''
 
 <!--
 📝 HOW TO FILL THIS OUT:
-1. First, find the brewery in our API to get current info
-2. Go to: http://178.156.206.171:8000/breweries/search?query=BREWERY_NAME
-3. Copy what's currently wrong and what it should be
+
+⚠️ FIRST: Click the "Preview" tab above to see what this looks like!
+         Gray text disappears in preview - only your answers show.
+
+THEN:
+1. Find the brewery in our API: http://178.156.206.171:8000/breweries/search?query=BREWERY_NAME
+2. Copy what's currently wrong and what it should be
+3. Click back to "Write" tab
 4. Delete the gray text and examples
 5. Type your information on the same line after each field
+6. Click "Preview" to check it looks right before submitting
 
 EXAMPLE:
 **Current Value:** 2173985133
 **Correct Value:** 2173985134
+
+💡 TIP: Use the Preview tab to make sure you deleted all the instructions!
 -->
 
 ## Brewery to Update
