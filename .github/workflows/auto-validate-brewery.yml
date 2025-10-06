@@ -1,0 +1,49 @@
+name: Auto-Validate Brewery Submission
+
+on:
+  issues:
+    types: [opened, edited]
+
+jobs:
+  validate-with-claude:
+    if: contains(github.event.issue.labels.*.name, 'brewery-addition') || contains(github.event.issue.labels.*.name, 'brewery-update') || contains(github.event.issue.labels.*.name, 'brewery-closed')
+    runs-on: ubuntu-latest
+
+    permissions:
+      issues: write
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Validate with Claude
+        uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          prompt: |
+            Review this brewery submission for data quality and completeness.
+
+            Issue: #${{ github.event.issue.number }}
+            Title: ${{ github.event.issue.title }}
+
+            Please validate:
+            1. All required fields are present and properly formatted
+            2. Brewery name is valid and not duplicate
+            3. Address is complete with city, state, country
+            4. Phone number format is valid (if provided)
+            5. Website URL is valid (if provided)
+            6. Brewery type is one of: micro, nano, regional, brewpub, large, planning, bar, contract, proprietor, closed
+
+            If valid:
+            - Add comment with ✅ approval
+            - Label issue as "validated"
+            - Generate UUID for new brewery
+            - Create the JSON entry
+
+            If invalid:
+            - Add comment explaining what's missing/incorrect
+            - Label issue as "needs-revision"
+            - Request specific corrections from submitter
