@@ -23,27 +23,28 @@ jobs:
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          additional_permissions: "Bash(gh issue *:*), Bash(gh *:*)"
+          claude_args: "--model claude-3-5-haiku-20241022"
           prompt: |
             Review this brewery submission for data quality and completeness.
 
             Issue: #${{ github.event.issue.number }}
             Title: ${{ github.event.issue.title }}
 
+            Check the issue body for all brewery fields.
+
             Please validate:
             1. All required fields are present and properly formatted
-            2. Brewery name is valid and not duplicate
+            2. Brewery name is valid and not duplicate (check breweries.json)
             3. Address is complete with city, state, country
             4. Phone number format is valid (if provided)
             5. Website URL is valid (if provided)
             6. Brewery type is one of: micro, nano, regional, brewpub, large, planning, bar, contract, proprietor, closed
 
             If valid:
-            - Add comment with ✅ approval
-            - Label issue as "validated"
-            - Generate UUID for new brewery
-            - Create the JSON entry
+            - Add a comment with ✅ and message: "**Validation Passed!** This brewery submission has been validated and is ready for approval. All required fields are present and properly formatted. A course instructor will review and approve this submission shortly."
+            - Add the label "validated" to the issue
 
             If invalid:
-            - Add comment explaining what's missing/incorrect
-            - Label issue as "needs-revision"
-            - Request specific corrections from submitter
+            - Add a comment with ❌ explaining what's missing or incorrect
+            - Add the label "needs-revision" to the issue

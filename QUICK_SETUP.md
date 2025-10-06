@@ -6,7 +6,7 @@ Since you've already installed the Claude GitHub App, you just need to add a few
 
 Go to: https://github.com/BADM554/brewery-api/settings/secrets/actions
 
-Click **"New repository secret"** and add these **3 secrets**:
+Click **"New repository secret"** and add these **4 secrets**:
 
 ### 1. VPS_HOST
 ```
@@ -27,6 +27,11 @@ rQAAAAtzc2gtZWQyNTUxOQAAACDunlOQvP9jUo5oCWnteZatZtqh9LrvlfCLzVVddiMe+A
 AAAEAHMa3xApcP/jbgd+Mfw1GouHxzNiXAcrYY1E8n2VGdFO6eU5C8/2NSjmgJae15lq1m
 2qH0uu+V8IvNVV12Ix74AAAADnZpc2hhbEBiYWRtNTU0AQIDBAUGBw==
 -----END OPENSSH PRIVATE KEY-----
+```
+
+### 4. ANTHROPIC_API_KEY
+```
+sk-ant-api03-... (your Anthropic API key from https://console.anthropic.com/settings/keys)
 ```
 
 ## How It Works
@@ -73,11 +78,10 @@ AAAEAHMa3xApcP/jbgd+Mfw1GouHxzNiXAcrYY1E8n2VGdFO6eU5C8/2NSjmgJae15lq1m
 
 | Secret | Value | Purpose |
 |--------|-------|---------|
+| `ANTHROPIC_API_KEY` | *(from Anthropic Console)* | Claude API authentication |
 | `VPS_HOST` | `178.156.206.171` | Your Hetzner server IP |
 | `VPS_USERNAME` | `root` | SSH username |
 | `VPS_SSH_KEY` | *(SSH private key above)* | For deployment authentication |
-
-**Note:** `ANTHROPIC_API_KEY` is **NOT needed** since you're using the GitHub App! 🎉
 
 ## What Happens After "Approved"
 
@@ -129,17 +133,17 @@ Check your brewery: http://178.156.206.171:8000/docs
 
 ## Cost
 
-- **$0** per submission (using GitHub App, not API)
+- Anthropic API: ~$0.01-0.05 per submission (minimal token usage)
 - GitHub Actions: Free tier
 - VPS: €4/month (already running)
 
 ## What's Next
 
-1. ✅ Add the 3 secrets above
+1. ✅ Add the 4 secrets above
 2. ✅ Test with dummy issue
 3. ✅ Share repo with students
 4. ✅ Let automation handle submissions!
 
 ---
 
-**Ready?** Add those 3 secrets and test it out! 🚀
+**Ready?** Add those 4 secrets and test it out! 🚀
