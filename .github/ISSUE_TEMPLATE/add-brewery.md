@@ -6,33 +6,51 @@ labels: 'brewery-addition, student-submission'
 assignees: ''
 ---
 
+<!--
+📝 HOW TO FILL THIS OUT:
+1. Delete the gray comment text (like this) and the examples
+2. Type your brewery's information on the SAME LINE after each field
+3. Keep all the bold text (**Brewery Name:**) - just add your info after it
+
+BEFORE: **Brewery Name:** (delete this comment and type here)
+AFTER:  **Brewery Name:** Joe's Brewery
+-->
+
 ## Brewery Information
 
-**Brewery Name:**
+**Brewery Name:** (delete this and type the brewery name here)
 <!-- Example: Triptych Brewing -->
 
-**Brewery Type:**
+**Brewery Type:** (delete this and type: micro, nano, brewpub, etc.)
 <!-- Select one: micro, nano, regional, brewpub, large, planning, bar, contract, proprietor -->
 <!-- Example: micro -->
 
 **Address:**
-- Street: <!-- Example: 1703 Woodfield Drive -->
-- City: <!-- Example: Savoy -->
-- State/Province: <!-- Example: Illinois -->
-- Postal Code: <!-- Example: 61874 -->
-- Country: <!-- Example: United States -->
+- Street: (delete this and type street address)
+  <!-- Example: 1703 Woodfield Drive -->
+- City: (delete this and type city)
+  <!-- Example: Savoy -->
+- State/Province: (delete this and type full state name)
+  <!-- Example: Illinois -->
+- Postal Code: (delete this and type zip code)
+  <!-- Example: 61874 -->
+- Country: (delete this and type country name)
+  <!-- Example: United States -->
 
 **Contact Information:**
-- Phone: <!-- Example: 2173551500 (numbers only, no dashes or spaces) -->
-- Website: <!-- Example: https://triptychbrewing.com -->
+- Phone: (delete this and type phone - numbers only, no spaces or dashes)
+  <!-- Example: 2173551500 -->
+- Website: (delete this and type full website URL starting with https://)
+  <!-- Example: https://triptychbrewing.com -->
 
 **Location (if known):**
 <!-- You can find these on Google Maps by right-clicking the location -->
-- Latitude: <!-- Example: 40.0564 -->
-- Longitude: <!-- Example: -88.2825 -->
+- Latitude: (delete this and type latitude number or leave blank)
+  <!-- Example: 40.0564 -->
+- Longitude: (delete this and type longitude number or leave blank)
+  <!-- Example: -88.2825 -->
 
-**Additional Notes:**
-<!-- Any other relevant information about this brewery -->
+**Additional Notes:** (delete this and type any extra info, or leave blank)
 <!-- Example: Known for IPAs, has outdoor seating, dog-friendly -->
 
 ---

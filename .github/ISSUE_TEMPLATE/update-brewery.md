@@ -6,37 +6,53 @@ labels: 'brewery-update, student-submission'
 assignees: ''
 ---
 
+<!--
+📝 HOW TO FILL THIS OUT:
+1. First, find the brewery in our API to get current info
+2. Go to: http://178.156.206.171:8000/breweries/search?query=BREWERY_NAME
+3. Copy what's currently wrong and what it should be
+4. Delete the gray text and examples
+5. Type your information on the same line after each field
+
+EXAMPLE:
+**Current Value:** 2173985133
+**Correct Value:** 2173985134
+-->
+
 ## Brewery to Update
 
-**Brewery Name:**
+**Brewery Name:** (delete this and type the brewery name)
 <!-- Example: Blind Pig Brewery -->
 
-**Brewery ID (if known):**
+**Brewery ID (if known):** (delete this and paste the ID from the API, or leave blank)
 <!-- Find this in the API response at http://178.156.206.171:8000/breweries/search?query=BREWERY_NAME -->
+<!-- Look for "id": "67836207..." and copy that whole code -->
 <!-- Example: 67836207-49ed-4d67-8dca-8f66acdcbb00 -->
 
 **Current Location:**
-- City: <!-- Example: Champaign -->
-- State: <!-- Example: Illinois -->
+- City: (delete this and type city)
+  <!-- Example: Champaign -->
+- State: (delete this and type state)
+  <!-- Example: Illinois -->
 
 ---
 
 ## What needs to be updated?
 
-**Field to Update:**
+**Field to Update:** (delete this and type which field is wrong: phone, website, address, etc.)
 <!-- Select one: phone, website, address, status, type, postal_code, coordinates -->
 <!-- Example: phone -->
 
-**Current Value:**
+**Current Value:** (what the API shows RIGHT NOW - copy it exactly)
 <!-- What the database currently shows -->
 <!-- Example: 2173985133 -->
 
-**Correct Value:**
+**Correct Value:** (what it SHOULD be - the correct information)
 <!-- What it should be -->
 <!-- Example: 2173985134 -->
 
-**Source/Verification:**
-<!-- How did you verify this information? -->
+**Source/Verification:** (how did you confirm this is correct?)
+<!-- Delete this and explain how you verified: -->
 <!-- Example: Called the brewery directly on 2025-10-06 -->
 <!-- Example: Checked their website at https://blindpigbrewery.com/contact -->
 <!-- Example: Visited in person and confirmed with staff -->

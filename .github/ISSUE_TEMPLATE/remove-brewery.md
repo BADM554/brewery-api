@@ -6,46 +6,60 @@ labels: 'brewery-closed, student-submission'
 assignees: ''
 ---
 
+<!--
+📝 HOW TO FILL THIS OUT:
+1. Make sure the brewery is PERMANENTLY closed (not just temporarily)
+2. Delete all the gray text and examples
+3. Type your information on the same line after each field
+4. Provide proof that it's closed (news link, photo, etc.)
+
+IMPORTANT: Only report if you're sure it's PERMANENTLY closed!
+- ✅ Building is empty or has new business
+- ✅ Google Maps says "Permanently closed"
+- ❌ Website is just down (might be temporary)
+-->
+
 ## Brewery Information
 
-**Brewery Name:**
+**Brewery Name:** (delete this and type the brewery name)
 <!-- Example: 122 West Brewing Co -->
 
-**Brewery ID (if known):**
+**Brewery ID (if known):** (delete this and paste ID from API, or leave blank)
 <!-- Find at: http://178.156.206.171:8000/breweries/search?query=BREWERY_NAME -->
+<!-- Look for "id": "e54c2f02..." and copy that whole code -->
 <!-- Example: e54c2f02-acd6-4172-861d-fcfa54c8701a -->
 
 **Location:**
-- City: <!-- Example: Bellingham -->
-- State: <!-- Example: Washington -->
+- City: (delete this and type city)
+  <!-- Example: Bellingham -->
+- State: (delete this and type state)
+  <!-- Example: Washington -->
 
 ---
 
 ## Closure Information
 
-**Date Closed (if known):**
+**Date Closed (if known):** (when did it close? Or write "Unknown")
 <!-- Example: September 2024 -->
 <!-- Or: Unknown, but confirmed closed as of October 2025 -->
 
-**How did you verify this closure?**
-<!-- Select one or more: -->
-<!-- ✓ Visited location and found it closed/empty -->
-<!-- ✓ Called phone number - disconnected or wrong business -->
-<!-- ✓ Found news article about closure -->
-<!-- ✓ Checked social media - closure announcement -->
-<!-- ✓ Google Maps shows "Permanently closed" -->
-<!-- Example: Drove by location on 2025-10-05, building is empty with "For Lease" sign -->
+**How did you verify this closure?** (delete this and explain what you did)
+<!-- Pick one or more and explain: -->
+<!-- ✓ Visited location - describe what you saw -->
+<!-- ✓ Called phone number - what happened? -->
+<!-- ✓ Found news article - include link below -->
+<!-- ✓ Checked Google Maps - does it say "Permanently closed"? -->
+<!-- Example: Drove by on 2025-10-05, building is empty with "For Lease" sign -->
 
-**Source/Evidence:**
-<!-- Provide links or detailed description -->
+**Source/Evidence:** (delete this and provide proof - links or detailed description)
+<!-- Provide links to news articles, social media, or describe what you saw -->
 <!-- Example: https://www.bellinghamherald.com/news/local/article123456.html -->
 <!-- Example: Called (360) 306-3285, number is disconnected -->
-<!-- Example: Facebook page last post was Sept 2024 announcing closure: https://facebook.com/122westbrew -->
+<!-- Example: Google Maps shows "Permanently closed" -->
 
-**Additional Details:**
-<!-- Any additional information about the closure -->
+**Additional Details:** (delete this and add any other info, or leave blank)
 <!-- Example: Location is now a coffee shop -->
-<!-- Example: Owners posted farewell message thanking customers -->
+<!-- Example: Owners posted farewell message on Facebook -->
 
 ---
 
