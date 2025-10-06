@@ -9,20 +9,20 @@ assignees: ''
 <!--
 📝 HOW TO FILL THIS OUT:
 
-⚠️ FIRST: Click the "Preview" tab above to see what this looks like!
-         The gray text won't show up in the preview - only your answers will.
+⚠️ FIRST: Click the "Preview" tab above to see what this SHOULD look like when done!
 
-THEN:
+THEN follow these steps:
 1. Click back to the "Write" tab
-2. Delete the gray comment text (like this) and the examples
-3. Type your brewery's information on the SAME LINE after each field
-4. Keep all the bold text (**Brewery Name:**) - just add your info after it
-5. Click "Preview" again to see how it looks before submitting
+2. Find each field like: **Brewery Name:** (delete this and type...)
+3. DELETE the part in parentheses (delete this and type...)
+4. TYPE your brewery's information right after the colon
+5. Click "Preview" again to check before submitting
 
-BEFORE: **Brewery Name:** (delete this comment and type here)
-AFTER:  **Brewery Name:** Joe's Brewery
+EXAMPLE:
+BEFORE editing: **Brewery Name:** (delete this and type the brewery name here)
+AFTER editing:  **Brewery Name:** Triptych Brewing
 
-💡 TIP: Switch between "Write" and "Preview" tabs to make sure it looks good!
+💡 In "Preview" mode, you should NOT see any parentheses or the word "delete"!
 -->
 
 ## Brewery Information

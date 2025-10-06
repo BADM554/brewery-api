@@ -9,23 +9,27 @@ assignees: ''
 <!--
 📝 HOW TO FILL THIS OUT:
 
-⚠️ FIRST: Click the "Preview" tab above to see what this looks like!
-         Gray comments disappear in preview - only your answers show.
+⚠️ FIRST: Click the "Preview" tab above to see what this SHOULD look like when done!
 
 IMPORTANT: Only report if you're sure it's PERMANENTLY closed!
 - ✅ Building is empty or has new business
 - ✅ Google Maps says "Permanently closed"
 - ❌ Website is just down (might be temporary)
 
-THEN:
+THEN follow these steps:
 1. Make sure the brewery is PERMANENTLY closed (not just temporarily)
 2. Click back to "Write" tab
-3. Delete all the gray text and examples
-4. Type your information on the same line after each field
-5. Provide proof that it's closed (news link, what you saw, etc.)
-6. Click "Preview" to check before submitting
+3. Find text in parentheses like: (delete this and type...)
+4. DELETE the parentheses and everything inside them
+5. TYPE your information right after the colon
+6. Provide proof that it's closed (news link, what you saw, etc.)
+7. Click "Preview" to check before submitting
 
-💡 TIP: Preview shows exactly what Claude and the instructor will see!
+EXAMPLE:
+BEFORE editing: **Brewery Name:** (delete this and type the brewery name)
+AFTER editing:  **Brewery Name:** 122 West Brewing Co
+
+💡 In "Preview" mode, you should NOT see parentheses or the word "delete"!
 -->
 
 ## Brewery Information

@@ -9,22 +9,22 @@ assignees: ''
 <!--
 📝 HOW TO FILL THIS OUT:
 
-⚠️ FIRST: Click the "Preview" tab above to see what this looks like!
-         Gray text disappears in preview - only your answers show.
+⚠️ FIRST: Click the "Preview" tab above to see what this SHOULD look like when done!
 
-THEN:
+THEN follow these steps:
 1. Find the brewery in our API: http://178.156.206.171:8000/breweries/search?query=BREWERY_NAME
 2. Copy what's currently wrong and what it should be
 3. Click back to "Write" tab
-4. Delete the gray text and examples
-5. Type your information on the same line after each field
-6. Click "Preview" to check it looks right before submitting
+4. Find text in parentheses like: (delete this and type...)
+5. DELETE the parentheses and everything inside them
+6. TYPE your information right after the colon
+7. Click "Preview" to check before submitting
 
 EXAMPLE:
-**Current Value:** 2173985133
-**Correct Value:** 2173985134
+BEFORE editing: **Current Value:** (what the API shows RIGHT NOW)
+AFTER editing:  **Current Value:** 2173985133
 
-💡 TIP: Use the Preview tab to make sure you deleted all the instructions!
+💡 In "Preview" mode, you should NOT see parentheses or the word "delete"!
 -->
 
 ## Brewery to Update
