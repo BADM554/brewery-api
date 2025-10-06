@@ -1,0 +1,110 @@
+name: Validate Brewery Data
+
+on:
+  pull_request:
+    paths:
+      - 'breweries.json'
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Validate JSON syntax
+        run: |
+          python3 -c "
+          import json
+          import sys
+
+          try:
+              with open('breweries.json', 'r') as f:
+                  data = json.load(f)
+              print(f'✅ Valid JSON with {len(data)} breweries')
+              sys.exit(0)
+          except json.JSONDecodeError as e:
+              print(f'❌ Invalid JSON: {e}')
+              sys.exit(1)
+          "
+
+      - name: Validate brewery data structure
+        run: |
+          python3 << 'EOF'
+          import json
+          import sys
+
+          with open('breweries.json', 'r') as f:
+              breweries = json.load(f)
+
+          required_fields = ['id', 'name', 'brewery_type', 'city', 'state_province', 'country']
+          valid_types = ['micro', 'nano', 'regional', 'brewpub', 'large', 'planning', 'bar', 'contract', 'proprietor', 'closed', 'taproom']
+
+          errors = []
+
+          for i, brewery in enumerate(breweries):
+              # Check required fields
+              for field in required_fields:
+                  if field not in brewery or brewery[field] is None or brewery[field] == '':
+                      errors.append(f"Brewery {i}: Missing required field '{field}'")
+
+              # Validate brewery type
+              if brewery.get('brewery_type') and brewery['brewery_type'] not in valid_types:
+                  errors.append(f"Brewery {i} ({brewery.get('name', 'Unknown')}): Invalid type '{brewery['brewery_type']}'")
+
+              # Check for duplicate IDs
+              ids = [b['id'] for b in breweries]
+              if len(ids) != len(set(ids)):
+                  errors.append("Duplicate brewery IDs found")
+                  break
+
+          if errors:
+              print('❌ Validation errors found:')
+              for error in errors[:10]:  # Show first 10 errors
+                  print(f'  - {error}')
+              sys.exit(1)
+          else:
+              print(f'✅ All {len(breweries)} breweries validated successfully')
+              sys.exit(0)
+          EOF
+
+      - name: Check for common issues
+        run: |
+          python3 << 'EOF'
+          import json
+
+          with open('breweries.json', 'r') as f:
+              breweries = json.load(f)
+
+          warnings = []
+
+          for brewery in breweries:
+              name = brewery.get('name', 'Unknown')
+
+              # Check for missing coordinates
+              if not brewery.get('longitude') or not brewery.get('latitude'):
+                  warnings.append(f"⚠️  {name}: Missing GPS coordinates")
+
+              # Check for missing phone
+              if not brewery.get('phone'):
+                  warnings.append(f"⚠️  {name}: Missing phone number")
+
+              # Check for missing website
+              if not brewery.get('website_url'):
+                  warnings.append(f"⚠️  {name}: Missing website")
+
+          if warnings:
+              print('Optional field warnings:')
+              for warning in warnings[:5]:  # Show first 5 warnings
+                  print(f'  {warning}')
+              print(f'  ... and {len(warnings) - 5} more' if len(warnings) > 5 else '')
+          else:
+              print('✅ No warnings')
+          EOF

@@ -1,0 +1,15 @@
+# Replace YOUR_SERVER_IP with your actual Hetzner server IP
+# Or replace with your domain name for automatic HTTPS
+
+# Option 1: Using IP address (no HTTPS)
+http://YOUR_SERVER_IP {
+    reverse_proxy api:8000
+    encode gzip
+}
+
+# Option 2: Using domain name (automatic HTTPS)
+# Uncomment and replace with your domain:
+# api.yourdomain.com {
+#     reverse_proxy api:8000
+#     encode gzip
+# }
