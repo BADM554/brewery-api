@@ -23,7 +23,7 @@ jobs:
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          additional_permissions: "Bash(gh issue *:*), Bash(gh *:*)"
+          additional_permissions: "Bash(*:*)"
           claude_args: "--model claude-3-5-haiku-20241022"
           prompt: |
             Review this brewery submission for data quality and completeness.
