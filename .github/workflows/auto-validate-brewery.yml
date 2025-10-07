@@ -31,7 +31,10 @@ jobs:
             Issue: #${{ github.event.issue.number }}
             Title: ${{ github.event.issue.title }}
 
-            Check the issue body for all brewery fields.
+            Issue Body:
+            ${{ github.event.issue.body }}
+
+            The issue body above contains all the brewery information submitted by the user.
 
             Please validate:
             1. All required fields are present and properly formatted
