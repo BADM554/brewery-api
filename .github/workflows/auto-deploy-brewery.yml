@@ -74,6 +74,12 @@ jobs:
         uses: actions/github-script@v7
         with:
           script: |
+            // Extract brewery name from issue body
+            const issueBody = context.payload.issue.body;
+            const nameMatch = issueBody.match(/\*\*Brewery Name:\*\*\s*\n(.+)/);
+            const breweryName = nameMatch ? nameMatch[1].trim() : 'your brewery';
+            const searchQuery = encodeURIComponent(breweryName);
+
             github.rest.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
@@ -83,7 +89,7 @@ jobs:
             Your brewery has been added to the database and deployed to the live API.
 
             🔗 **Test it now:**
-            - API Search: http://178.156.206.171:8000/breweries/search?query=${context.payload.issue.title}
+            - API Search: http://178.156.206.171:8000/breweries/search?query=${searchQuery}
             - View all: http://178.156.206.171:8000/docs
 
             The changes are live and available to all students! 🎉
