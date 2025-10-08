@@ -289,4 +289,4 @@ This project teaches:
 
 ---
 
-**Course:** BADM 554 | **Semester:** Spring 2025 | **Institution:** University of Illinois
+**Course:** BADM 554 | **Semester:** Fall 2025 | **Institution:** University of Illinois
