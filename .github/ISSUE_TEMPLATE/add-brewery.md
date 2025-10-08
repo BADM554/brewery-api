@@ -66,7 +66,7 @@ AFTER editing:  **Brewery Name:** Triptych Brewing
 
 ## Submission Checklist
 - [ ] I have verified this brewery exists (website, Google Maps, or visited in person)
-- [ ] I checked it's not already in the database: http://178.156.206.171:8000/breweries/search?query=BREWERY_NAME
+- [ ] I checked it's not already in the database: http://178.156.206.171:8000/breweries/search?query=BREWERY_NAME (replace with name of brewery you add)
 - [ ] All required fields are filled out (Name, Type, City, State, Country)
 - [ ] Contact information is accurate
 - [ ] I removed the example comments before submitting
