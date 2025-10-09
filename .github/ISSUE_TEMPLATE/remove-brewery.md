@@ -9,105 +9,107 @@ assignees: ''
 <!--
 📝 HOW TO FILL THIS OUT:
 
-⚠️ FIRST: Click the "Preview" tab above to see what this SHOULD look like when done!
+⚠️ IMPORTANT: Only report if PERMANENTLY closed!
 
-IMPORTANT: Only report if you're sure it's PERMANENTLY closed!
-- ✅ Building is empty or has new business
-- ✅ Google Maps says "Permanently closed"
-- ❌ Website is just down (might be temporary)
+✅ Strong evidence: Empty building, "Permanently closed" on Google Maps, news article
+❌ Weak evidence: Website down, no social media posts (might be temporary)
 
-THEN follow these steps:
-1. Make sure the brewery is PERMANENTLY closed (not just temporarily)
-2. Click back to "Write" tab
-3. Find text in parentheses like: (delete this and type...)
-4. DELETE the parentheses and everything inside them
-5. TYPE your information right after the colon
-6. Provide proof that it's closed (news link, what you saw, etc.)
-7. Click "Preview" to check before submitting
+1. Verify the brewery is truly closed
+2. Replace all [placeholder text] with actual information
+3. Click "Preview" to check before submitting
 
 EXAMPLE:
-BEFORE editing: **Brewery Name:** (delete this and type the brewery name)
-AFTER editing:  **Brewery Name:** 122 West Brewing Co
-
-💡 In "Preview" mode, you should NOT see parentheses or the word "delete"!
+❌ BEFORE: **Brewery Name:** [Brewery Name]
+✅ AFTER:  **Brewery Name:** 122 West Brewing Co
 -->
 
 ## Brewery Information
 
-**Brewery Name:** (delete this and type the brewery name)
-<!-- Example: 122 West Brewing Co -->
+**Brewery Name:** [Exact Brewery Name]
 
-**Brewery ID (if known):** (delete this and paste ID from API, or leave blank)
-<!-- Find at: http://178.156.206.171:8000/breweries/search?query=BREWERY_NAME -->
-<!-- Look for "id": "e54c2f02..." and copy that whole code -->
-<!-- Example: e54c2f02-acd6-4172-861d-fcfa54c8701a -->
+**Brewery ID (if known):** [UUID from API, e.g., e54c2f02-acd6-4172-861d-fcfa54c8701a]
+<!-- Find at: http://178.156.206.171:8000/breweries/search?query=[BREWERY_NAME] -->
 
 **Location:**
-- City: (delete this and type city)
-  <!-- Example: Bellingham -->
-- State: (delete this and type state)
-  <!-- Example: Washington -->
+- City: [City Name]
+- State: [State Name]
 
 ---
 
 ## Closure Information
 
-**Date Closed (if known):** (when did it close? Or write "Unknown")
-<!-- Example: September 2024 -->
-<!-- Or: Unknown, but confirmed closed as of October 2025 -->
+**Date Closed:** [Month Year, or "Unknown but confirmed closed as of [date]"]
 
-**How did you verify this closure?** (delete this and explain what you did)
-<!-- Pick one or more and explain: -->
-<!-- ✓ Visited location - describe what you saw -->
-<!-- ✓ Called phone number - what happened? -->
-<!-- ✓ Found news article - include link below -->
-<!-- ✓ Checked Google Maps - does it say "Permanently closed"? -->
-<!-- Example: Drove by on 2025-10-05, building is empty with "For Lease" sign -->
+**How I Verified:** [Choose one or more]
+<!-- Examples:
+- Visited location on [date]: [describe what you saw]
+- Called phone number [number]: [disconnected/wrong number/etc.]
+- Google Maps shows "Permanently closed"
+- Found news article: [URL]
+- Checked social media: [what you found]
+-->
 
-**Source/Evidence:** (delete this and provide proof - links or detailed description)
-<!-- Provide links to news articles, social media, or describe what you saw -->
-<!-- Example: https://www.bellinghamherald.com/news/local/article123456.html -->
-<!-- Example: Called (360) 306-3285, number is disconnected -->
-<!-- Example: Google Maps shows "Permanently closed" -->
+**Evidence/Source:** [Provide proof]
+<!-- Strong evidence:
+- News article URL
+- Photo of empty building
+- Google Maps link showing "Permanently closed"
+- Phone disconnected
+- New business at location
+-->
 
-**Additional Details:** (delete this and add any other info, or leave blank)
-<!-- Example: Location is now a coffee shop -->
-<!-- Example: Owners posted farewell message on Facebook -->
+**Additional Details (optional):** [Any other relevant information]
+<!-- Example: Location is now a coffee shop
+- Owners announced closure on Facebook [link]
+-->
 
 ---
 
 ## Submission Checklist
-- [ ] I have verified this brewery is **permanently** closed (not just temporarily or for renovation)
-- [ ] I have provided evidence or source of closure
-- [ ] I have checked the brewery's website or social media
-- [ ] I tried calling the phone number or visiting in person
+- [ ] Verified **permanently** closed (not temporary or renovation)
+- [ ] Provided strong evidence (not just website down)
+- [ ] Checked brewery's website/social media
+- [ ] Attempted to call or visit in person
+- [ ] Replaced all `[placeholder text]`
 
-## Student Information (Optional)
-**Your Name:**
-<!-- Example: Alex Johnson -->
+## Student Information (optional)
+**Your Name:** [Your Name]
 
 **Course Section:** BADM 554
 
-**Date:**
-<!-- Example: 2025-10-06 -->
+**Date:** [Today's Date]
+
+---
+
+## ⏱️ What Happens Next?
+
+1. **Automated Validation** (instant) - Checks submission format
+2. **Instructor Review** (24-48 hours) - Verifies closure evidence
+3. **Status Update** (30 seconds) - Brewery marked as "closed" in API
+4. **Confirmation** (instant) - You'll get a comment confirming the update
+
+**Timeline:** Closure reports typically processed within 1-2 business days
 
 ---
 
 ## 📝 How to Verify a Closure
 
-**Strong Evidence:**
-- ✅ Visit in person - building empty or new business
-- ✅ Phone number disconnected
-- ✅ News article about closure
-- ✅ Official announcement on social media
-- ✅ Google Maps shows "Permanently closed"
+**✅ Strong Evidence (prefer these):**
+- Visit in person → building empty or new business
+- Phone disconnected → "number no longer in service"
+- News article → local news reported closure
+- Official announcement → brewery posted on social media
+- Google Maps → shows "Permanently closed"
 
-**Weak Evidence:**
-- ⚠️ Website is down (might be temporary)
-- ⚠️ No recent social media posts (might just be inactive)
-- ⚠️ Heard from someone (needs verification)
+**⚠️ Weak Evidence (not sufficient alone):**
+- Website down (might be temporary technical issue)
+- No social media posts (might just be inactive)
+- Heard from someone (needs direct verification)
 
-**Note:** We want to avoid marking temporarily closed breweries as permanently closed!
+**Important:** We avoid marking temporarily closed breweries as permanent!
+
+**Need help?** See [SUPPORT.md](../blob/main/.github/SUPPORT.md) for troubleshooting
 
 ---
-*After approval, this brewery will be marked as closed in our database and the update may be submitted to the official Open Brewery DB.*
+
+*After approval, this brewery will be marked as `closed` in our database. The update may also be submitted to the official [Open Brewery DB](https://www.openbrewerydb.org/).*

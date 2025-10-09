@@ -41,10 +41,16 @@ jobs:
             6. Write the updated breweries.json
             7. Create a commit with message: "Add brewery from issue #${{ github.event.issue.number }}: [brewery name]"
 
-            After successful commit, respond with:
-            - Brewery name
-            - Generated ID
-            - Confirmation message
+            IMPORTANT: After successful commit, create a file called deployment-info.json with:
+            {
+              "brewery_name": "exact brewery name",
+              "brewery_id": "the UUID you generated",
+              "brewery_type": "the type",
+              "city": "city",
+              "state": "state"
+            }
+
+            This file will be used to generate the success comment.
 
       - name: Configure Git
         run: |
@@ -74,31 +80,92 @@ jobs:
         uses: actions/github-script@v7
         with:
           script: |
-            // Extract brewery name from issue body
-            const issueBody = context.payload.issue.body;
-            const nameMatch = issueBody.match(/\*\*Brewery Name:\*\*\s*\n(.+)/);
-            const breweryName = nameMatch ? nameMatch[1].trim() : 'your brewery';
-            const searchQuery = encodeURIComponent(breweryName);
+            const fs = require('fs');
 
-            github.rest.issues.createComment({
+            // Try to read deployment info from Claude
+            let breweryName = 'your brewery';
+            let breweryId = '';
+            let breweryType = '';
+            let city = '';
+            let state = '';
+
+            try {
+              if (fs.existsSync('deployment-info.json')) {
+                const info = JSON.parse(fs.readFileSync('deployment-info.json', 'utf8'));
+                breweryName = info.brewery_name || breweryName;
+                breweryId = info.brewery_id || '';
+                breweryType = info.brewery_type || '';
+                city = info.city || '';
+                state = info.state || '';
+              }
+            } catch (e) {
+              console.log('Could not read deployment info, extracting from issue body');
+              // Fallback to parsing issue body
+              const issueBody = context.payload.issue.body;
+              const nameMatch = issueBody.match(/\*\*Brewery Name:\*\*\s*(.+)/);
+              breweryName = nameMatch ? nameMatch[1].trim() : breweryName;
+            }
+
+            const searchQuery = encodeURIComponent(breweryName);
+            const apiBase = 'http://178.156.206.171:8000';
+
+            let body = `## 🎉 Brewery Successfully Added & Deployed!\n\n`;
+            body += `Your brewery has been added to the database and is now live on the API.\n\n`;
+
+            body += `### 📊 Brewery Details\n`;
+            body += `- **Name:** ${breweryName}\n`;
+            if (breweryType) body += `- **Type:** ${breweryType}\n`;
+            if (city && state) body += `- **Location:** ${city}, ${state}\n`;
+            if (breweryId) body += `- **Database ID:** \`${breweryId}\`\n`;
+            body += `\n`;
+
+            body += `### 🔗 Access Your Brewery\n`;
+            body += `Your brewery is now available through multiple endpoints:\n\n`;
+            body += `**Search by name:**\n`;
+            body += `\`\`\`\n${apiBase}/breweries/search?query=${searchQuery}\n\`\`\`\n\n`;
+
+            if (breweryId) {
+              body += `**Direct access by ID:**\n`;
+              body += `\`\`\`\n${apiBase}/breweries/${breweryId}\n\`\`\`\n\n`;
+            }
+
+            if (city) {
+              body += `**All breweries in ${city}:**\n`;
+              body += `\`\`\`\n${apiBase}/breweries?by_city=${encodeURIComponent(city)}\n\`\`\`\n\n`;
+            }
+
+            body += `### 📚 Try It Out\n`;
+            body += `- **Interactive API Docs:** ${apiBase}/docs\n`;
+            body += `- **Test in browser:** Click any link above\n`;
+            body += `- **Use in your code:** See [README.md](../blob/main/README.md) for examples\n\n`;
+
+            body += `### ✅ What Happened\n`;
+            body += `1. ✓ Your submission was validated\n`;
+            body += `2. ✓ Instructor approved your brewery\n`;
+            body += `3. ✓ Data was added to \`breweries.json\`\n`;
+            body += `4. ✓ Changes were committed to GitHub\n`;
+            body += `5. ✓ API was deployed to production server\n`;
+            body += `6. ✓ Your brewery is now available to all students!\n\n`;
+
+            body += `### 🌟 Next Steps\n`;
+            body += `- Try querying the API with the links above\n`;
+            body += `- Share your brewery with classmates\n`;
+            body += `- Consider submitting another brewery\n`;
+            body += `- This data may be contributed to the official [Open Brewery DB](https://www.openbrewerydb.org/)\n\n`;
+
+            body += `**Thank you for contributing to open data!** 🍺\n\n`;
+            body += `---\n`;
+            body += `*This issue will now be closed. If you need to make corrections, please open a new issue using the "Update Brewery Information" template.*`;
+
+            await github.rest.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: `✅ **Brewery Added & Deployed!**
-
-            Your brewery has been added to the database and deployed to the live API.
-
-            🔗 **Test it now:**
-            - API Search: http://178.156.206.171:8000/breweries/search?query=${searchQuery}
-            - View all: http://178.156.206.171:8000/docs
-
-            The changes are live and available to all students! 🎉
-
-            Thank you for contributing to open data! 🍺`
+              body: body
             });
 
             // Close the issue
-            github.rest.issues.update({
+            await github.rest.issues.update({
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,

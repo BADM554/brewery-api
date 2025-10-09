@@ -9,88 +9,91 @@ assignees: ''
 <!--
 📝 HOW TO FILL THIS OUT:
 
-⚠️ FIRST: Click the "Preview" tab above to see what this SHOULD look like when done!
-
-THEN follow these steps:
-1. Click back to the "Write" tab
-2. Find each field like: **Brewery Name:** (delete this and type...)
-3. DELETE the part in parentheses (delete this and type...)
-4. TYPE your brewery's information right after the colon
-5. Click "Preview" again to check before submitting
+Replace the placeholder text [LIKE THIS] with your brewery's actual information.
 
 EXAMPLE:
-BEFORE editing: **Brewery Name:** (delete this and type the brewery name here)
-AFTER editing:  **Brewery Name:** Triptych Brewing
+❌ BEFORE: **Brewery Name:** [Your Brewery Name]
+✅ AFTER:  **Brewery Name:** Triptych Brewing
 
-💡 In "Preview" mode, you should NOT see any parentheses or the word "delete"!
+💡 TIP: Click the "Preview" tab to see how your submission looks before submitting!
 -->
 
 ## Brewery Information
 
-**Brewery Name:** (delete this and type the brewery name here)
-<!-- Example: Triptych Brewing -->
+**Brewery Name:** [Your Brewery Name]
 
-**Brewery Type:** (delete this and type: micro, nano, brewpub, etc.)
-<!-- Select one: micro, nano, regional, brewpub, large, planning, bar, contract, proprietor -->
-<!-- Example: micro -->
+**Brewery Type:** [Select: micro, nano, regional, brewpub, large, planning, bar, contract, or proprietor]
+<!-- Common types: micro (small craft brewery), brewpub (brewery + restaurant), nano (very small) -->
 
 **Address:**
-- Street: (delete this and type street address)
-  <!-- Example: 1703 Woodfield Drive -->
-- City: (delete this and type city)
-  <!-- Example: Savoy -->
-- State/Province: (delete this and type full state name)
-  <!-- Example: Illinois -->
-- Postal Code: (delete this and type zip code)
-  <!-- Example: 61874 -->
-- Country: (delete this and type country name)
-  <!-- Example: United States -->
+- Street: [Street Address]
+- City: [City]
+- State/Province: [Full State Name, e.g., Illinois]
+- Postal Code: [ZIP Code]
+- Country: [Country Name, e.g., United States]
 
 **Contact Information:**
-- Phone: (delete this and type phone - numbers only, no spaces or dashes)
-  <!-- Example: 2173551500 -->
-- Website: (delete this and type full website URL starting with https://)
-  <!-- Example: https://triptychbrewing.com -->
+- Phone: [10-digit phone number, no spaces or dashes - e.g., 2173551500]
+- Website: [Full URL including https:// - e.g., https://example.com]
 
-**Location (if known):**
-<!-- You can find these on Google Maps by right-clicking the location -->
-- Latitude: (delete this and type latitude number or leave blank)
-  <!-- Example: 40.0564 -->
-- Longitude: (delete this and type longitude number or leave blank)
-  <!-- Example: -88.2825 -->
+**GPS Coordinates (optional but recommended):**
+<!-- Find on Google Maps: Right-click location → Copy coordinates -->
+- Latitude: [e.g., 40.0564 or leave blank]
+- Longitude: [e.g., -88.2825 or leave blank]
 
-**Additional Notes:** (delete this and type any extra info, or leave blank)
-<!-- Example: Known for IPAs, has outdoor seating, dog-friendly -->
+**Additional Notes (optional):**
+[Any interesting details - specialties, outdoor seating, pet-friendly, etc. Or leave blank]
 
 ---
 
 ## Submission Checklist
-- [ ] I have verified this brewery exists (website, Google Maps, or visited in person)
-- [ ] I checked it's not already in the database: http://178.156.206.171:8000/breweries/search?query=BREWERY_NAME (replace with name of brewery you add)
-- [ ] All required fields are filled out (Name, Type, City, State, Country)
-- [ ] Contact information is accurate
-- [ ] I removed the example comments before submitting
+Check these before submitting:
+- [ ] Brewery exists (verified via website, Google Maps, or in-person visit)
+- [ ] Not already in database - checked: http://178.156.206.171:8000/breweries/search?query=[BREWERY_NAME]
+- [ ] All required fields filled: Name, Type, City, State, Country
+- [ ] Phone and website are accurate (if provided)
+- [ ] Replaced all `[placeholder text]` with actual information
 
-## Student Information (Optional)
-**Your Name:**
-<!-- Example: John Smith -->
+## Student Information (optional)
+**Your Name:** [Your Name]
 
 **Course Section:** BADM 554
 
-**Date:**
-<!-- Example: 2025-10-06 -->
+**Date:** [Today's Date]
 
 ---
 
-## 📝 Quick Tips
-- **Find GPS coordinates:** Google Maps → Right-click location → Copy coordinates
-- **Verify brewery exists:** Check their website or call the phone number
-- **Brewery types explained:**
-  - `micro` - Small craft brewery (most common)
-  - `brewpub` - Brewery with attached restaurant
-  - `nano` - Very small brewery
-  - `regional` - Larger regional brewery
-  - `large` - Major commercial brewery
+## ⏱️ What Happens Next?
+
+1. **Automated Validation** (instant) - System checks your submission format
+2. **Instructor Review** (24-48 hours) - Manual approval during business days
+3. **Auto-Deployment** (30 seconds) - Added to live API automatically
+4. **Confirmation** (instant) - You'll get a comment with links to test your brewery
+
+**Track your submission:**
+- `validated` label = Passed automated checks
+- `approved` label = Instructor approved, deployment in progress
+- Closed issue = Successfully deployed! 🎉
 
 ---
-*After approval, this brewery will be added to our database within minutes and may be submitted to the official Open Brewery DB.*
+
+## 📚 Helpful Resources
+
+**Find GPS coordinates:**
+1. Open Google Maps
+2. Right-click the brewery location
+3. Click the coordinates at top
+4. Paste into Latitude/Longitude fields
+
+**Brewery type guide:**
+- `micro` - Small craft brewery (most common, <15k barrels/year)
+- `brewpub` - Brewery with attached restaurant/food service
+- `nano` - Very small brewery (≤3 barrels per batch)
+- `regional` - Larger regional brewery (15k-6M barrels/year)
+- `bar` - Bar that doesn't brew (sells others' beers)
+
+**Need help?** See [SUPPORT.md](../blob/main/.github/SUPPORT.md) for troubleshooting
+
+---
+
+*After approval, your brewery will be live on the API and available to all students. This data may also be contributed to the official [Open Brewery DB](https://www.openbrewerydb.org/).*

@@ -9,95 +9,97 @@ assignees: ''
 <!--
 📝 HOW TO FILL THIS OUT:
 
-⚠️ FIRST: Click the "Preview" tab above to see what this SHOULD look like when done!
-
-THEN follow these steps:
-1. Find the brewery in our API: http://178.156.206.171:8000/breweries/search?query=BREWERY_NAME
-2. Copy what's currently wrong and what it should be
-3. Click back to "Write" tab
-4. Find text in parentheses like: (delete this and type...)
-5. DELETE the parentheses and everything inside them
-6. TYPE your information right after the colon
-7. Click "Preview" to check before submitting
+1. Find the brewery: http://178.156.206.171:8000/breweries/search?query=[BREWERY_NAME]
+2. Replace all [placeholder text] below with actual information
+3. Click "Preview" tab to check before submitting
 
 EXAMPLE:
-BEFORE editing: **Current Value:** (what the API shows RIGHT NOW)
-AFTER editing:  **Current Value:** 2173985133
-
-💡 In "Preview" mode, you should NOT see parentheses or the word "delete"!
+❌ BEFORE: **Brewery Name:** [Brewery Name]
+✅ AFTER:  **Brewery Name:** Blind Pig Brewery
 -->
 
 ## Brewery to Update
 
-**Brewery Name:** (delete this and type the brewery name)
-<!-- Example: Blind Pig Brewery -->
+**Brewery Name:** [Exact Brewery Name]
 
-**Brewery ID (if known):** (delete this and paste the ID from the API, or leave blank)
-<!-- Find this in the API response at http://178.156.206.171:8000/breweries/search?query=BREWERY_NAME -->
-<!-- Look for "id": "67836207..." and copy that whole code -->
-<!-- Example: 67836207-49ed-4d67-8dca-8f66acdcbb00 -->
+**Brewery ID (if known):** [UUID from API, e.g., 67836207-49ed-4d67-8dca-8f66acdcbb00]
+<!-- Find at: http://178.156.206.171:8000/breweries/search?query=[BREWERY_NAME] -->
+<!-- Look for "id": "..." in the JSON response -->
 
 **Current Location:**
-- City: (delete this and type city)
-  <!-- Example: Champaign -->
-- State: (delete this and type state)
-  <!-- Example: Illinois -->
+- City: [City Name]
+- State: [State Name]
 
 ---
 
-## What needs to be updated?
+## What Needs to Be Updated?
 
-**Field to Update:** (delete this and type which field is wrong: phone, website, address, etc.)
-<!-- Select one: phone, website, address, status, type, postal_code, coordinates -->
-<!-- Example: phone -->
+**Field to Update:** [Select: phone, website, address, brewery_type, postal_code, coordinates, or other]
 
-**Current Value:** (what the API shows RIGHT NOW - copy it exactly)
-<!-- What the database currently shows -->
-<!-- Example: 2173985133 -->
+**Current (Incorrect) Value:** [What the API currently shows - copy exactly from API]
 
-**Correct Value:** (what it SHOULD be - the correct information)
-<!-- What it should be -->
-<!-- Example: 2173985134 -->
+**Correct Value:** [What it SHOULD be]
 
-**Source/Verification:** (how did you confirm this is correct?)
-<!-- Delete this and explain how you verified: -->
-<!-- Example: Called the brewery directly on 2025-10-06 -->
-<!-- Example: Checked their website at https://blindpigbrewery.com/contact -->
-<!-- Example: Visited in person and confirmed with staff -->
+**How I Verified This:** [Explain your source]
+<!-- Examples:
+- Called brewery on [date], confirmed with staff
+- Checked official website: [URL]
+- Visited in person on [date]
+- Found in news article: [URL]
+-->
 
 ---
 
 ## Submission Checklist
-- [ ] I have verified the new information is correct
-- [ ] I have identified the specific brewery that needs updating
-- [ ] I have provided a source for the updated information
-- [ ] I checked the current value in the API first
+- [ ] Verified new information is correct (with source)
+- [ ] Found brewery in API and confirmed what needs changing
+- [ ] Included brewery ID (if possible)
+- [ ] Checked current value in API
+- [ ] Replaced all `[placeholder text]`
 
-## Student Information (Optional)
-**Your Name:**
-<!-- Example: Jane Doe -->
+## Student Information (optional)
+**Your Name:** [Your Name]
 
 **Course Section:** BADM 554
 
-**Date:**
-<!-- Example: 2025-10-06 -->
+**Date:** [Today's Date]
 
 ---
 
-## 📝 How to Find Brewery ID
+## ⏱️ What Happens Next?
 
-1. Go to: http://178.156.206.171:8000/breweries/search?query=BREWERY_NAME
-2. Look for the brewery in the results
-3. Copy the `"id"` field value
+1. **Automated Validation** (instant) - Checks submission format
+2. **Instructor Review** (24-48 hours) - Verifies the correction
+3. **Auto-Update** (30 seconds) - Applied to live API
+4. **Confirmation** (instant) - You'll get a comment confirming the update
 
-**Example:**
+**Timeline:** Updates typically processed within 1-2 business days
+
+---
+
+## 📝 How to Find Brewery Information
+
+**Step 1: Search for brewery**
+```
+http://178.156.206.171:8000/breweries/search?query=[BREWERY_NAME]
+```
+
+**Step 2: Find the brewery ID**
+Look for the `"id"` field in the JSON response:
 ```json
 {
   "id": "67836207-49ed-4d67-8dca-8f66acdcbb00",  ← Copy this
   "name": "Blind Pig Brewery",
+  "phone": "2173985133",  ← Current value
   ...
 }
 ```
 
+**Step 3: Copy the incorrect value exactly**
+This helps us find and fix the right field!
+
+**Need help?** See [SUPPORT.md](../blob/main/.github/SUPPORT.md) for troubleshooting
+
 ---
-*After approval, this update will be applied to our database within minutes and may be submitted to the official Open Brewery DB.*
+
+*After approval, your update will be live on the API. This correction may also be submitted to the official [Open Brewery DB](https://www.openbrewerydb.org/).*
