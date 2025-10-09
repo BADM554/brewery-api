@@ -2,7 +2,7 @@ name: Auto-Validate Brewery Submission
 
 on:
   issues:
-    types: [opened, edited]
+    types: [opened, edited, labeled]
 
 # Prevent duplicate runs on same issue
 concurrency:
