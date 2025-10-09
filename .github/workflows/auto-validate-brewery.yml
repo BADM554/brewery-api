@@ -24,7 +24,7 @@ jobs:
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          claude_args: "--model claude-3-5-haiku-20241022"
+          claude_args: "--model claude-3-5-haiku-20241022 --allowed-tools Read"
           prompt: |
             Review this brewery submission and respond with ONLY a JSON object.
 
