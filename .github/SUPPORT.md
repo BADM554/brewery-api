@@ -368,6 +368,65 @@ http://178.156.206.171:8000/breweries?by_type=micro
 http://178.156.206.171:8000/docs
 ```
 
+### API Pagination Guide
+
+**Default limit:** All queries return **50 results** by default.
+
+**Working with large result sets:**
+
+```bash
+# Default: returns only 50 breweries
+http://178.156.206.171:8000/breweries?by_state=California
+
+# Increase to maximum: 200 results per page
+http://178.156.206.171:8000/breweries?by_state=California&per_page=200
+
+# Get next page (results 201-400)
+http://178.156.206.171:8000/breweries?by_state=California&per_page=200&page=2
+```
+
+**Getting total counts without limits:**
+
+```bash
+# Returns {"total": 523} - shows count without pagination
+http://178.156.206.171:8000/breweries/meta?by_state=California
+```
+
+**Example: Getting all breweries from a state with 500+ entries**
+
+```python
+import requests
+
+# Step 1: Get total count
+meta = requests.get("http://178.156.206.171:8000/breweries/meta?by_state=California")
+total = meta.json()["total"]
+print(f"Total breweries: {total}")
+
+# Step 2: Calculate pages needed (200 per page)
+pages = (total + 199) // 200
+
+# Step 3: Loop through all pages
+all_breweries = []
+for page in range(1, pages + 1):
+    response = requests.get(
+        f"http://178.156.206.171:8000/breweries?by_state=California&per_page=200&page={page}"
+    )
+    all_breweries.extend(response.json())
+
+print(f"Retrieved {len(all_breweries)} breweries")
+```
+
+**Limits by endpoint:**
+
+| Endpoint | Default | Maximum |
+|----------|---------|---------|
+| `/breweries` | 50 | 200 per page |
+| `/breweries/search` | 50 | 200 per page |
+| `/breweries/random` | 1 | 50 |
+| `/breweries/autocomplete` | 15 | 15 (fixed) |
+| `/breweries/meta` | No limit | Returns count only |
+| `/breweries/{id}` | 1 | 1 (single brewery) |
+
 ### Validation Requirements Checklist
 
 **Required fields:**
