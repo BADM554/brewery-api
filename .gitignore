@@ -12,3 +12,8 @@ ENV/
 .env
 *.log
 .DS_Store
+
+# Sync temporary files
+official_breweries.json
+sync_analysis.json
+sync_report_*.txt
