@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 4: Group Discussion & Challenge Activities</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #2980b9;
+            margin-top: 30px;
+            border-bottom: 2px solid #ecf0f1;
+            padding-bottom: 5px;
+        }
+        h3 {
+            color: #16a085;
+            margin-top: 25px;
+        }
+        h4 {
+            color: #27ae60;
+            margin-top: 20px;
+        }
+        ul {
+            padding-left: 25px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        strong {
+            color: #2c3e50;
+        }
+        hr {
+            border: none;
+            border-top: 2px solid #ecf0f1;
+            margin: 30px 0;
+        }
+        .section {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 4px solid #3498db;
+        }
+        .challenge {
+            background-color: #fff3cd;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 4px solid #ffc107;
+        }
+        .activity {
+            background-color: #d1ecf1;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border-left: 4px solid #17a2b8;
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: "Courier New", monospace;
+            font-size: 0.9em;
+        }
+        .guiding-questions {
+            background-color: #e7f3ff;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .task-details {
+            background-color: #f0f0f0;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Group Discussion & Challenge Activity Ideas</h1>
+
+    <h2>Group Discussion Topics</h2>
+
+    <div class="section">
+        <h3>1. API Design Patterns & Best Practices</h3>
+        <div class="guiding-questions">
+            <strong>Guiding Questions:</strong>
+            <ul>
+                <li>Why does the Brewery API not require authentication? What are the trade-offs between open vs authenticated APIs?</li>
+                <li>Compare the different endpoints (<code>/search</code> vs <code>/breweries</code> with filters). When would you use each approach?</li>
+                <li>The <code>/autocomplete</code> endpoint returns simplified data (just <code>id</code> and <code>name</code>). Why might this design choice improve performance?</li>
+                <li>How does pagination (<code>per_page</code> parameter) help manage large datasets? What happens without it?</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h3>2. JSON vs DataFrames: When to Convert?</h3>
+        <div class="guiding-questions">
+            <strong>Guiding Questions:</strong>
+            <ul>
+                <li>What advantages does pandas DataFrame provide over raw JSON dictionaries?</li>
+                <li>Are there scenarios where you'd want to keep data as JSON instead of converting?</li>
+                <li>How does the tabular structure of DataFrames limit or enable certain types of analysis?</li>
+                <li>When combining data from multiple API calls (Task 6), what challenges arise?</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h3>3. Real-World API Integration Scenarios</h3>
+        <div class="guiding-questions">
+            <strong>Guiding Questions:</strong>
+            <ul>
+                <li>How could a business use this brewery data? (e.g., market analysis, logistics, competitor research)</li>
+                <li>What additional data would you need to combine with brewery data for meaningful insights?</li>
+                <li>If you were building a brewery recommendation app, which endpoints would be most critical?</li>
+                <li>How would you handle API downtime or errors in a production application?</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h3>4. Data Quality & Validation</h3>
+        <div class="guiding-questions">
+            <strong>Guiding Questions:</strong>
+            <ul>
+                <li>Looking at the dataset (8,925+ breweries), what data quality issues might exist?</li>
+                <li>Some breweries have <code>null</code> values for optional fields. How should your analysis handle missing data?</li>
+                <li>The <code>brewery_type</code> field has specific allowed values (micro, nano, brewpub, etc.). Why enforce this constraint?</li>
+                <li>If you found duplicate entries (same name + city + state), how would you decide which to keep?</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h3>5. RESTful API Principles</h3>
+        <div class="guiding-questions">
+            <strong>Guiding Questions:</strong>
+            <ul>
+                <li>What makes this API "RESTful"?</li>
+                <li>Why use <code>/breweries/{id}</code> instead of <code>/get_brewery?id={id}</code>?</li>
+                <li>How do HTTP status codes (200, 404, 500) help communicate API state?</li>
+                <li>What's the difference between query parameters (<code>?query=dog</code>) and path parameters (<code>/breweries/{id}</code>)?</li>
+            </ul>
+        </div>
+    </div>
+
+    <hr>
+
+    <h2>Challenge Activities</h2>
+
+    <div class="challenge">
+        <h3>Challenge 1: The Brewery Geography Game (15-20 min)</h3>
+        <div class="task-details">
+            <p><strong>Setup:</strong> Groups of 3-4 students</p>
+            <p><strong>Rules:</strong></p>
+            <ol>
+                <li>Each group gets a U.S. state at random</li>
+                <li>Using the API, teams compete to find:
+                    <ul>
+                        <li><strong>Most unique brewery type</strong> in their state</li>
+                        <li><strong>Longest brewery name</strong> (character count)</li>
+                        <li><strong>City with most breweries</strong> in their state</li>
+                        <li><strong>Weirdest brewery name</strong> (subjective, voted on by class)</li>
+                    </ul>
+                </li>
+                <li>First team to complete all queries and present findings wins</li>
+            </ol>
+            <p><strong>Learning Objective:</strong> Practice filtering, aggregation, and exploratory data analysis under time pressure</p>
+            <p><strong>Bonus Round:</strong> Find a brewery that exists in multiple states (franchise/chain) using creative search queries.</p>
+        </div>
+    </div>
+
+    <div class="challenge">
+        <h3>Challenge 2: API Response Time Race (10-15 min)</h3>
+        <div class="task-details">
+            <p><strong>Setup:</strong> Individual or pairs</p>
+            <p><strong>Task:</strong><br>
+            Write the most efficient code to answer: <strong>"Which state has the most breweries?"</strong></p>
+            <p><strong>Constraints:</strong></p>
+            <ul>
+                <li>Minimize number of API calls</li>
+                <li>Minimize data transfer (use <code>per_page</code> wisely)</li>
+                <li>Must verify answer programmatically (not by manual counting)</li>
+            </ul>
+            <p><strong>Discussion After:</strong></p>
+            <ul>
+                <li>Compare approaches (e.g., <code>/meta</code> endpoint vs fetching all data)</li>
+                <li>Discuss time complexity vs space complexity trade-offs</li>
+                <li>Why does API efficiency matter in production?</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="challenge">
+        <h3>Challenge 3: The Missing Data Detective (15-20 min)</h3>
+        <div class="task-details">
+            <p><strong>Setup:</strong> Groups of 2-3 students</p>
+            <p><strong>Scenario:</strong><br>
+            You're building a brewery map application. Users need complete location data (latitude, longitude, address).</p>
+            <p><strong>Task:</strong></p>
+            <ol>
+                <li>Query the API to find breweries with <strong>missing location data</strong> (<code>null</code> coordinates)</li>
+                <li>Count how many breweries are "unmappable"</li>
+                <li>Identify which states/cities have the most missing data</li>
+                <li>Propose a solution: How would you handle these breweries in your app?</li>
+            </ol>
+            <p><strong>Deliverable:</strong></p>
+            <ul>
+                <li>Pandas DataFrame showing breweries with incomplete location data</li>
+                <li>Summary statistics by state</li>
+                <li>2-minute presentation of findings</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="challenge">
+        <h3>Challenge 4: Build Your Own Endpoint (20-25 min)</h3>
+        <div class="task-details">
+            <p><strong>Setup:</strong> Individual or pairs</p>
+            <p><strong>Scenario:</strong><br>
+            You're pitching a new endpoint to add to the Brewery API.</p>
+            <p><strong>Task:</strong></p>
+            <ol>
+                <li>Design a new endpoint (e.g., <code>/breweries/nearby</code>, <code>/breweries/stats</code>, <code>/breweries/compare</code>)</li>
+                <li>Define what parameters it accepts</li>
+                <li>Mock the expected JSON response format</li>
+                <li>Write Python code that would <strong>consume</strong> your endpoint (even though it doesn't exist yet)</li>
+                <li>Present your design to the class</li>
+            </ol>
+            <p><strong>Learning Objective:</strong> Think like an API designer, not just a consumer</p>
+        </div>
+    </div>
+
+    <div class="challenge">
+        <h3>Challenge 5: Data Validation Showdown (15 min)</h3>
+        <div class="task-details">
+            <p><strong>Setup:</strong> Groups compete head-to-head</p>
+            <p><strong>Task:</strong><br>
+            Using the API, find and document <strong>data quality issues</strong>:</p>
+            <ul>
+                <li>Breweries with invalid phone numbers (too short/long)</li>
+                <li>Breweries with missing required fields</li>
+                <li>Breweries with mismatched state/postal code combinations</li>
+                <li>Duplicate entries (same name + city)</li>
+            </ul>
+            <p><strong>Scoring:</strong></p>
+            <ul>
+                <li>1 point per unique data quality issue found</li>
+                <li>2 bonus points for writing validation code to detect it automatically</li>
+                <li>3 bonus points for proposing how to fix it programmatically</li>
+            </ul>
+            <p><strong>Winner:</strong> Group with most points after 15 minutes</p>
+        </div>
+    </div>
+
+    <div class="challenge">
+        <h3>Challenge 6: API Mashup (Advanced - 25-30 min)</h3>
+        <div class="task-details">
+            <p><strong>Setup:</strong> Groups of 3-4 students</p>
+            <p><strong>Task:</strong><br>
+            Combine the Brewery API with <strong>another public API</strong> to create something interesting.</p>
+            <p><strong>Example Ideas:</strong></p>
+            <ul>
+                <li>Weather API: "Find breweries in cities with best weather this weekend"</li>
+                <li>Google Maps API: "Calculate driving time between breweries for a brewery tour"</li>
+                <li>Census API: "Correlate brewery density with population demographics"</li>
+                <li>Twitter API: "Find most-mentioned breweries on social media"</li>
+            </ul>
+            <p><strong>Deliverable:</strong></p>
+            <ul>
+                <li>Working code that calls both APIs</li>
+                <li>Jupyter notebook showing results</li>
+                <li>3-minute demo to class</li>
+            </ul>
+            <p><strong>Learning Objective:</strong> Real-world applications combine multiple data sources</p>
+        </div>
+    </div>
+
+    <hr>
+
+    <h2>Quick 5-Minute Activities (Class Warmups)</h2>
+
+    <div class="activity">
+        <h4>Activity A: Fastest Query</h4>
+        <p>Who can write a one-line query to get breweries in their hometown?</p>
+    </div>
+
+    <div class="activity">
+        <h4>Activity B: Brewery Bingo</h4>
+        <p>Create bingo cards with brewery types, cities, or name patterns. Call out search results, students mark their cards.</p>
+    </div>
+
+    <div class="activity">
+        <h4>Activity C: Error Code Theater</h4>
+        <p>Intentionally break API calls (wrong URL, bad parameters, timeout). Students diagnose the error from the output.</p>
+    </div>
+
+    <div class="activity">
+        <h4>Activity D: JSON Prettify Contest</h4>
+        <p>Give students ugly JSON. Who can format it most readably in 2 minutes? (Practice for debugging)</p>
+    </div>
+
+    <hr>
+
+    <h2>Discussion Debrief Questions (Post-Activity)</h2>
+
+    <div class="section">
+        <ol>
+            <li>What was the hardest part of working with this API?</li>
+            <li>What did you learn about JSON structure that surprised you?</li>
+            <li>How would you explain APIs to someone non-technical?</li>
+            <li>What's one thing you'd change about this API's design?</li>
+            <li>Where else in your life do you interact with APIs without realizing it?</li>
+        </ol>
+    </div>
+
+</body>
+</html>

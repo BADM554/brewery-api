@@ -282,3 +282,32 @@ Check `breweries.json` for existing entry with same name + city + state before a
 - **Open Brewery DB Spec:** https://www.openbrewerydb.org/documentation
 - **FastAPI Docs:** https://fastapi.tiangolo.com/
 - **Claude GitHub Actions:** https://docs.claude.com/en/docs/claude-code/github-actions
+
+---
+
+## AI Assistant Guidelines
+
+### DO:
+- Help understand concepts and explain approaches
+- Review code structure and suggest improvements
+- Assist with debugging and error explanation
+- Help students understand API concepts and JSON structure
+- Explain GitHub Actions workflows and automation
+
+### DON'T:
+- Provide complete solutions to assignments
+- Write code that students should write themselves
+- Share answers to graded assessments
+- Submit brewery data on behalf of students
+
+---
+
+## Current Focus
+- [ ] [Update during /session-start]
+
+## Roadmap
+- [ ] [Add planned features]
+
+## Session Log
+### 2025-12-27
+- Added roadmap and teaching guidelines sections
